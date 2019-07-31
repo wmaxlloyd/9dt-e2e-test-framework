@@ -175,7 +175,7 @@ class ExpectedGameScenarios:
                     "PutDraw": [len(game) - 1]
                 }),
                 expected_board_result = ExpectedCommandOutcomes.BoardUsed(game_scenario_utilities.generate_draw_game_board(game_board_height, game_board_width)),
-                expected_history_result = ExpectedCommandOutcomes.GetUsed(str(column_int) for column_int in game) # Generating expected output from game since string is of verying length
+                expected_history_result = ExpectedCommandOutcomes.GetUsed([str(column_int) for column_int in game]) # Generating expected output from game since string is of verying length
             )
 
     class KeepPlayingOnFilledColumn(GameScenarioBase):
@@ -247,7 +247,7 @@ class ExpectedGameScenarios:
                     "PutAlreadyDraw": [len(game) - 1]
                 }),
                 expected_board_result = ExpectedCommandOutcomes.BoardUsed(game_scenario_utilities.generate_draw_game_board(game_board_height, game_board_width)),
-                expected_history_result = ExpectedCommandOutcomes.GetUsed(str(column_int) for column_int in game[:-1])
+                expected_history_result = ExpectedCommandOutcomes.GetUsed([str(column_int) for column_int in game[:-1]])
             )
     
 
