@@ -11,9 +11,13 @@ run:
 	docker logs -f ${CONTAINER_NAME}
 
 clean:
+	docker stop ${CONTAINER_NAME} || true
 	docker rmi ${IMAGE_TAG} || true
 	docker rm ${CONTAINER_NAME} || true
 	rm -rf ./artifacts || true
+
+archive:
+	docker cp ${CONTAINER_NAME}:/home/artifacts ./artifacts
 
 enter:
 	docker run -it $(IMAGE_TAG) /bin/sh
