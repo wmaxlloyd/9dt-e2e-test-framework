@@ -90,7 +90,6 @@ class GameScenarios(DropTokenTestCase):
         if comparison_errors:
             self.fail(comparison_errors)
 
-    @unittest.skip
     def test_game_scenario_0009(self):
         """
         @test Draw (Filled up board)
@@ -113,7 +112,6 @@ class GameScenarios(DropTokenTestCase):
         if comparison_errors:
             self.fail(comparison_errors)
 
-    @unittest.skip
     def test_game_scenario_0011(self):
         """
         @test Keep Playing after a draw
