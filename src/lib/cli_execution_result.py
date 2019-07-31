@@ -1,5 +1,5 @@
+from __future__ import annotations
 from typing import List
-
 
 class CLIExecutionResult:
     def __init__(self, command: str = "", output: List[str] = [], is_alive: bool = True) -> CLIExecutionResult:

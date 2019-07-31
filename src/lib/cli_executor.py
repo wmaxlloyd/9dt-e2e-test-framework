@@ -1,3 +1,4 @@
+from __future__ import annotations
 import pexpect
 from pexpect.exceptions import TIMEOUT as PExpectTimeout, EOF as PExpectEOF
 from src.utils.cli_executor_utilities import convert_array_elements_to_str

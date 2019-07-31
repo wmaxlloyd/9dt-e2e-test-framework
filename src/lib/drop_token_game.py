@@ -1,3 +1,4 @@
+from __future__ import annotations
 from typing import List, TYPE_CHECKING
 from src.lib.cli_executor import CLIExecutor
 if TYPE_CHECKING:

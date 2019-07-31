@@ -1,3 +1,4 @@
+from __future__ import annotations
 from typing import List
 from src.lib.cli_execution_result import CLIExecutionResult
 from src.configs.expected_command_outcomes import ExpectedCommandOutcomes

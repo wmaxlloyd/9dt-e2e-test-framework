@@ -1,6 +1,6 @@
+from __future__ import annotations
 from typing import List, TYPE_CHECKING
 from src.utils.exceptions import ExecutionResultsDoNotMatchException
-
 if TYPE_CHECKING:
     from src.lib.cli_execution_result import CLIExecutionResult
     from src.lib.game_scenario_base import GameScenarioBase
