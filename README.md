@@ -35,5 +35,5 @@ $ ./setup
 
 You will then be able to invoke tests directly by using:
 ```
-python e2e_tests.py
+$ python e2e_tests.py
 ```
