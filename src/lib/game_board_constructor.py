@@ -2,7 +2,7 @@ from typing import List
 from src.utils.exceptions import InvalidBoardException
 
 class GameBoardConstructor:
-    def __init__(self):
+    def __init__(self) -> GameBoardConstructor:
         self.board_width = 40
         self.board_height = 40
         self.empty_board_row = "| " + " ".join(["0"] * self.board_width)
@@ -11,7 +11,7 @@ class GameBoardConstructor:
             "  " + " ".join([str(item) for item in range(1, self.board_width + 1)])
         ]
 
-    def construct(self, non_empty_rows_as_list: List[List[str]] = []):
+    def construct(self, non_empty_rows_as_list: List[List[str]] = []) -> List[str]:
         empty_rows_to_insert = self.board_height - len(non_empty_rows_as_list)
         if empty_rows_to_insert < 0:
             raise InvalidBoardException(f"Received too many rows to insert. Can be no more than {self.board_height}. Received: {len(non_empty_rows_as_list)}")

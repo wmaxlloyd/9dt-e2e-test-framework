@@ -5,7 +5,7 @@ from src.utils import game_scenario_utilities
 
 class ExpectedGameScenarios:
     class HorizontalWinPlayer1(GameScenarioBase):
-        def __init__(self):
+        def __init__(self) -> GameScenarioBase:
             game = [1,1,2,2,3,3,4]
             super().__init__(
                 game_to_play = game,
@@ -23,7 +23,7 @@ class ExpectedGameScenarios:
             )
     
     class HorizontalWinPlayer2(GameScenarioBase):
-        def __init__(self):
+        def __init__(self) -> GameScenarioBase:
             game = [1,1,2,2,3,3,1,4,1,4]
             super().__init__(
                 game_to_play = game,
@@ -43,7 +43,7 @@ class ExpectedGameScenarios:
             )
     
     class VerticalWinPlayer1(GameScenarioBase):
-        def __init__(self):
+        def __init__(self) -> GameScenarioBase:
             game = [1,2,1,2,1,2,1]
             super().__init__(
                 game_to_play = game,
@@ -63,7 +63,7 @@ class ExpectedGameScenarios:
             )
     
     class VerticalWinPlayer2(GameScenarioBase):
-        def __init__(self):
+        def __init__(self) -> GameScenarioBase:
             game = [1,2,1,2,1,2,3,2]
             super().__init__(
                 game_to_play = game,
@@ -83,7 +83,7 @@ class ExpectedGameScenarios:
             )
     
     class DiagonalDownWinPlayer1(GameScenarioBase):
-        def __init__(self):
+        def __init__(self) -> GameScenarioBase:
             game = [4,3,3,2,1,2,2,1,1,4,1]
             super().__init__(
                 game_to_play = game,
@@ -103,7 +103,7 @@ class ExpectedGameScenarios:
             )
 
     class DiagonalDownWinPlayer2(GameScenarioBase):
-        def __init__(self):
+        def __init__(self) -> GameScenarioBase:
             game = [1,4,3,3,2,1,2,2,1,1]
             super().__init__(
                 game_to_play = game,
@@ -123,7 +123,7 @@ class ExpectedGameScenarios:
             )
     
     class DiagonalUpWinPlayer1(GameScenarioBase):
-        def __init__(self):
+        def __init__(self) -> GameScenarioBase:
             game = [1,2,2,3,4,3,3,4,4,1,4]
             super().__init__(
                 game_to_play = game,
@@ -143,7 +143,7 @@ class ExpectedGameScenarios:
             )
 
     class DiagonalUpWinPlayer2(GameScenarioBase):
-        def __init__(self):
+        def __init__(self) -> GameScenarioBase:
             game = [4,1,2,2,3,4,3,3,4,4]
             super().__init__(
                 game_to_play = game,
@@ -163,7 +163,7 @@ class ExpectedGameScenarios:
             )
     
     class Draw(GameScenarioBase):
-        def __init__(self):
+        def __init__(self) -> GameScenarioBase:
             game_board_constructor = GameBoardConstructor()
             game_board_height = game_board_constructor.board_height
             game_board_width = game_board_constructor.board_width
@@ -179,7 +179,7 @@ class ExpectedGameScenarios:
             )
 
     class KeepPlayingOnFilledColumn(GameScenarioBase):
-        def __init__(self):
+        def __init__(self) -> GameScenarioBase:
             game_board_height = GameBoardConstructor().board_height
             game = [1] * game_board_height + [1]
             super().__init__(
@@ -194,7 +194,7 @@ class ExpectedGameScenarios:
             )
     
     class KeepPlayingAfterWinPlayer1(GameScenarioBase):
-        def __init__(self):
+        def __init__(self) -> GameScenarioBase:
             game = [1,1,2,2,3,3,4,1,1]
             super().__init__(
                 game_to_play = game,
@@ -213,7 +213,7 @@ class ExpectedGameScenarios:
             )
     
     class KeepPlayingAfterWinPlayer2(GameScenarioBase):
-        def __init__(self):
+        def __init__(self) -> GameScenarioBase:
             game = [1,1,2,2,3,3,1,4,1,4,1,1]
             super().__init__(
                 game_to_play = game,
@@ -234,7 +234,7 @@ class ExpectedGameScenarios:
             )
     
     class KeepPlayingAfterDraw(GameScenarioBase):
-        def __init__(self):
+        def __init__(self) -> GameScenarioBase:
             game_board_constructor = GameBoardConstructor()
             game_board_height = game_board_constructor.board_height
             game_board_width = game_board_constructor.board_width

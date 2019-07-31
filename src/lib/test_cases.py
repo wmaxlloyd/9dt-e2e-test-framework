@@ -6,16 +6,16 @@ from src.lib.game_board_constructor import GameBoardConstructor
 from src.lib import cli_execution_validator
 
 class DropTokenTestCase(TestCase):
-    def setUp(self):
+    def setUp(self) -> None:
         self.drop_token_game = DropTokenGame()
         self.ExpectedCommandOutcomes = ExpectedCommandOutcomes
         self.ExpectedGameScenarios = ExpectedGameScenarios
         self.cli_execution_validator = cli_execution_validator
         self.GameBoardConstructor = GameBoardConstructor()
     
-    def tearDown(self):
+    def tearDown(self) -> None:
         self.drop_token_game.end()
     
-    def shortDescription(self):
+    def shortDescription(self) -> str:
         return self._testMethodDoc
 

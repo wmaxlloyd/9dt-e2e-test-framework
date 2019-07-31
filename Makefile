@@ -13,6 +13,7 @@ run:
 clean:
 	docker rmi ${IMAGE_TAG} || true
 	docker rm ${CONTAINER_NAME} || true
+	rm -rf ./artifacts || true
 
 enter:
 	docker run -it $(IMAGE_TAG) /bin/sh

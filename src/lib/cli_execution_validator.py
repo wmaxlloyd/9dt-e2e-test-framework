@@ -1,7 +1,11 @@
-from typing import List
+from typing import List, TYPE_CHECKING
 from src.utils.exceptions import ExecutionResultsDoNotMatchException
 
-def compare_execution_results(test_result, expected_result):
+if TYPE_CHECKING:
+    from src.lib.cli_execution_result import CLIExecutionResult
+    from src.lib.game_scenario_base import GameScenarioBase
+
+def compare_execution_results(test_result: CLIExecutionResult, expected_result: CLIExecutionResult) -> None:
     commands_match = True
     if test_result.command != expected_result.command:
         commands_match = False
@@ -24,7 +28,7 @@ Expected:
     Process Alive - {expected_result.is_alive}
     Output - {expected_result.output}""")
 
-def get_game_execution_comparisons(game: List[int], test_outputs, expected_outputs):
+def get_game_execution_comparisons(game: List[int], test_outputs: List[CLIExecutionResult], expected_outputs: List[CLIExecutionResult]) -> List[str]:
     execution_errors = []
     for (index, test_output) in enumerate(test_outputs):
         column_execution_comparison_error = get_execution_result_comparison_error(
@@ -37,7 +41,7 @@ def get_game_execution_comparisons(game: List[int], test_outputs, expected_outpu
     return execution_errors
 
 
-def get_execution_result_comparison_error(test_result, expected_result, error_prefix = ""):
+def get_execution_result_comparison_error(test_result: CLIExecutionResult, expected_result: CLIExecutionResult, error_prefix: str = "") -> str:
     try:
         compare_execution_results(
             test_result,
@@ -45,9 +49,9 @@ def get_execution_result_comparison_error(test_result, expected_result, error_pr
         )
     except ExecutionResultsDoNotMatchException as e:
         return f"{error_prefix}{str(e)}"
-    return None
+    return ""
 
-def test_game_scenario_and_get_errors(drop_token_game, scenario):
+def test_game_scenario_and_get_errors(drop_token_game: List[int], scenario: GameScenarioBase) -> str:
     drop_token_game.restart()
     game_output = drop_token_game.play_game(scenario.game_to_play)
     board_output = drop_token_game.get_board()
