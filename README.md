@@ -8,14 +8,14 @@ To run the suite of e2e tests, use the `Makefile` to `build` and `run`:
 $ make build run
 ```
 
-If your docker environment ever gets in a bad state you can delete all images, containers and artifacts using:
+If you want to clean your environment by deleting all images, containers and artifacts use:
 ```sh
 $ make clean
 ```
 
 If you want to copy the test results out of the container to an `artifacts` directory, use:
 ```sh
-make archive
+$ make archive
 ```
 
 # Setting up your environment for local development
