@@ -52,6 +52,7 @@ def get_execution_result_comparison_error(test_result: CLIExecutionResult, expec
     return ""
 
 def test_game_scenario_and_get_errors(drop_token_game: List[int], scenario: GameScenarioBase) -> str:
+    """Plays game and compares execution result of: PUT commands, BOARD command and GET (history)"""
     drop_token_game.restart()
     game_output = drop_token_game.play_game(scenario.game_to_play)
     board_output = drop_token_game.get_board()

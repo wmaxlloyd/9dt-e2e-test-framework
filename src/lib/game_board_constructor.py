@@ -13,6 +13,17 @@ class GameBoardConstructor:
         ]
 
     def construct(self, non_empty_rows_as_list: List[List[str]] = []) -> List[str]:
+        """
+        Constructs an expected game board output based on a list of non-empty rows.
+        For example: If self.board_width = 3 and self.board_height = 3
+        construct(["1"], ["1","2","0"]) -> [
+            "| 0 0 0",
+            "| 1 0 0",
+            "| 1 2 0",
+            "+------",
+            "  1 2 3
+        ]
+        """
         empty_rows_to_insert = self.board_height - len(non_empty_rows_as_list)
         if empty_rows_to_insert < 0:
             raise InvalidBoardException(f"Received too many rows to insert. Can be no more than {self.board_height}. Received: {len(non_empty_rows_as_list)}")

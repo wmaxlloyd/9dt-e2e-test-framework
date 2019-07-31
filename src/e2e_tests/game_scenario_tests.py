@@ -118,7 +118,7 @@ class GameScenarios(DropTokenTestCase):
         """
         comparison_errors = self.cli_execution_validator.test_game_scenario_and_get_errors(
             self.drop_token_game,
-            self.ExpectedGameScenarios.KeepPlayingOnDraw()
+            self.ExpectedGameScenarios.KeepPlayingAfterDraw()
         )
         if comparison_errors:
             self.fail(comparison_errors)
